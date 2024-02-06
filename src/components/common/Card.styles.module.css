@@ -1,0 +1,24 @@
+.wrapper {
+	border-radius: var(--border-radius);
+	box-shadow: var(--shadow);
+}
+.image-thumbnail {
+	flex-basis: 35%;
+}
+.image-preview {
+	flex-basis: 55%;
+	padding: 2.4rem;
+}
+.image-thumbnail img,
+.image-preview img {
+	height: 100%;
+	object-fit: cover;
+	width: auto;
+}
+.body {
+	flex: 1;
+	padding: 3.2rem 2rem;
+}
+.title {
+	font-size: var(--title-5);
+}

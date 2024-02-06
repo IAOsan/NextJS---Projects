@@ -1,0 +1,18 @@
+.container {
+	max-width: 126rem;
+	margin: 0 auto;
+	padding: 0 2.4rem;
+	width: 100%;
+}
+.container-sm {
+	max-width: 70rem;
+	margin: 0 auto;
+	padding: 0 2.4rem;
+	width: 100%;
+}
+.container-md {
+	max-width: 85rem;
+	margin: 0 auto;
+	padding: 0 2.4rem;
+	width: 100%;
+}

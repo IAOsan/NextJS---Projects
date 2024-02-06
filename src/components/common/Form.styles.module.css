@@ -1,0 +1,16 @@
+.wrapper {
+	border-radius: var(--border-radius);
+	box-shadow: var(--shadow);
+}
+.control {
+	background-color: var(--c-light);
+	border: 0.2rem solid var(--c-dark-100);
+	border-radius: var(--border-radius);
+	display: inline-block;
+	outline: none;
+	padding: 0.8rem 1.6rem;
+	width: 100%;
+}
+.control:focus {
+	box-shadow: 0 0 0 0.4rem var(--c-primary-100);
+}

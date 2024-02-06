@@ -1,0 +1,4 @@
+☐ refactor. improve event detail page with missing styles
+☐ todo. add validation to event detail if event requested  not exists
+☐ todo. add icons to event card and event detail card
+☐ todo. create route for filtered events

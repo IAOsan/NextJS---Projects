@@ -1,0 +1,45 @@
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: var(--font-base-size);
+}
+body {
+	background-color: var(--c-light);
+	color: var(--c-dark);
+	font-family: var(--body-font);
+	font-size: var(--text);
+	font-weight: var(--font-weight);
+	line-height: var(--lineheight);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--heading-font);
+	font-weight: var(--font-weight-bold);
+	line-height: var(--lineheight-sm);
+}
+img {
+	display: block;
+	height: auto;
+	max-width: 100%;
+	width: 100%;
+}
+ul {
+	list-style-type: none;
+}
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
