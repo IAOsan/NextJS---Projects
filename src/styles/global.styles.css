@@ -1,5 +1,6 @@
 @import './variables.styles.module.css';
 @import './base.styles.module.css';
+@import './icons.styles.module.css';
 @import './typography.styles.module.css';
 @import './layout.styles.module.css';
 @import './utils.styles.module.css';

@@ -1,21 +1,23 @@
+import { useRouter } from 'next/navigation';
 import PageLoyout from '../../components/PageLayout.component';
 import EventsForm from '../../components/events/EventsForm.component';
 import EventsList from '../../components/events/EventsList.component';
-import { useFiltersContext } from '../../context/Filters.context';
+import { useEventsContext } from '../../context/Events.context';
 
 function EventsPage() {
-	const { filteredEvents, filterByYearOrMonth } = useFiltersContext();
+	const router = useRouter();
+	const { events } = useEventsContext();
 
 	function handleFiltering(year, month) {
-		filterByYearOrMonth(year, month);
-		// navegar a la pagina de slug
+		const path = `/events/${year || 'year'}/${!isNaN(month) ? month : 'month'}`;
+		router.push(path);
 	}
 
 	return (
 		<PageLoyout>
 			<div className='container-sm'>
 				<EventsForm onFilter={handleFiltering} />
-				<EventsList data={filteredEvents} />
+				<EventsList data={events} />
 			</div>
 		</PageLoyout>
 	);

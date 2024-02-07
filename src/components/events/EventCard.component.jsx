@@ -9,7 +9,7 @@ import styles from './EventCard.styles.module.css';
 
 function EventCard({ id, image, title, date, address }) {
 	return (
-		<Card className='bg-light-50'>
+		<Card className='bg-light-50 text-left'>
 			<CardImageThumbnail>
 				<img
 					src={image}
@@ -19,11 +19,20 @@ function EventCard({ id, image, title, date, address }) {
 			<CardBody>
 				<CardTitle className='mb-12'>{title}</CardTitle>
 				<p className='text-muted'>
+					<span
+						className='icon-calendar mr-8'
+						aria-hidden
+					></span>
 					<b>{date}</b>
 				</p>
-				<p>
-					<i className='d-block text-muted'>{address.street}</i>
-					<i className='d-block text-muted'>{address.city}</i>
+				<p className='text-muted'>
+					<span
+						className='icon-location mr-8'
+						aria-hidden
+					></span>
+					<i>
+						{address.street} <br /> {address.city}
+					</i>
 				</p>
 				<Button
 					className={styles.link}
@@ -32,7 +41,11 @@ function EventCard({ id, image, title, date, address }) {
 					href={`/events/${id}`}
 					type='link'
 				>
-					Explore Event
+					<span className='mr-12'>Explore Event</span>
+					<span
+						className='icon-arrow-right'
+						aria-hidden
+					></span>
 				</Button>
 			</CardBody>
 		</Card>

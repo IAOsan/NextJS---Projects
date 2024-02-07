@@ -1,10 +1,9 @@
 import classNames from 'classnames';
 import { Form, FormLabel, FormGroup, FormControl, Button } from '../common';
-import { useFiltersContext } from '../../context/Filters.context';
 import styles from './EventsForm.styles.module.css';
+import { MONTHS } from '../../utils';
 
 function EventsForm({ onFilter }) {
-	const { filterByYearOrMonth } = useFiltersContext();
 	const groupClassname = classNames(styles.group, 'flex flex-ai-c mr-16');
 
 	function generateYearOptions(numberOfYears) {
@@ -14,7 +13,7 @@ function EventsForm({ onFilter }) {
 				key='defaultYear'
 				value=''
 			>
-				-Select year-
+				No selected
 			</option>,
 		];
 		for (let i = 0; i <= numberOfYears; i++) {
@@ -32,26 +31,12 @@ function EventsForm({ onFilter }) {
 	}
 
 	function generateMonthOptions() {
-		const months = [
-			'January',
-			'February',
-			'March',
-			'April',
-			'May',
-			'June',
-			'July',
-			'August',
-			'September',
-			'October',
-			'November',
-			'December',
-		];
 		const opts = [
 			<option
 				key='defaultMonth'
 				value=''
 			>
-				-Select month-
+				No selected
 			</option>,
 		];
 		for (let i = 0; i < 12; i++) {
@@ -60,7 +45,7 @@ function EventsForm({ onFilter }) {
 					key={i}
 					value={i}
 				>
-					{months[i]}
+					{MONTHS[i]}
 				</option>
 			);
 		}
@@ -71,8 +56,9 @@ function EventsForm({ onFilter }) {
 		e.preventDefault();
 		const { yearInput, monthInput } = e.target.elements;
 
-		const year = parseInt(yearInput.value);
-		const month = parseInt(monthInput.value);
+		const year = parseInt(yearInput.value) || undefined;
+		const month =
+			parseInt(monthInput.value) === 0 ? 0 : +monthInput.value || undefined;
 
 		onFilter(year, month);
 	}

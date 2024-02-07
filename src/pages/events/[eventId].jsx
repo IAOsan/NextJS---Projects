@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import PageLayout from '../../components/PageLayout.component';
-import EventDetailCard from '../../components/events/EventDetailCard.component';
+import EventDetailHeading from '../../components/eventDetail/EventDetailHeading.component';
+import EventDetailCard from '../../components/eventDetail/EventDetailCard.component';
 import { useEventsContext } from '../../context/Events.context';
 
 function EventDetail() {
@@ -13,14 +14,14 @@ function EventDetail() {
 
 	return (
 		<PageLayout>
+			<EventDetailHeading>{event.title}</EventDetailHeading>
+			<EventDetailCard
+				image={event.image}
+				date={event.date}
+				address={event.address}
+			/>
 			<div className='container-md'>
-				<h1 className='title-2 text-center mb-40'>{event.title}</h1>
-				<EventDetailCard
-					image={event.image}
-					date={event.date}
-					address={event.address}
-				/>
-				<p className='mt-40'>{event.description}</p>
+				<p className='mt-40 text-justify'>{event.description}</p>
 			</div>
 		</PageLayout>
 	);

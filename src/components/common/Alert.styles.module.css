@@ -1,0 +1,16 @@
+.alert {
+	border-radius: var(--border-radius);
+	padding: 2rem;
+}
+.primary {
+	background-color: var(--c-primary-50);
+	color: var(--c-primary-900);
+}
+.warning {
+	background-color: var(--c-warning-50);
+	color: var(--c-warning-800);
+}
+.danger {
+	background-color: var(--c-danger-100);
+	color: var(--c-danger-800);
+}

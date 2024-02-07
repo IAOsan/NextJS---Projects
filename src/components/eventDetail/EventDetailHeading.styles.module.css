@@ -1,0 +1,10 @@
+.title {
+	background-color: var(--c-primary);
+	color: var(--c-light);
+	margin-top: -5.2rem;
+	padding-top: 5.2rem;
+	padding-bottom: 14rem;
+	position: relative;
+	width: 100%;
+	z-index: var(--z-index-low);
+}
